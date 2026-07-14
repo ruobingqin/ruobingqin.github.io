@@ -1,0 +1,13 @@
+files/*.pdf
+!files/CV_Ruobing Qin.pdf
+
+files/*.docx
+files/*.zip
+!files/.gitkeep
+
+assets/img/*.jpg
+!assets/img/profile.jpg
+!assets/img/.gitkeep
+
+.DS_Store
+Thumbs.db
