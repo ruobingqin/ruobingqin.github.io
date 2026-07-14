@@ -1,0 +1,270 @@
+/* Google Sites-look academic homepage — minimal CSS, no framework */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --primary: #1a73e8;          /* Google Sites blue */
+  --primary-hover: #1557b0;
+  --text: #202124;
+  --muted: #5f6368;
+  --hairline: #e8eaed;
+  --bg: #ffffff;
+  --content-max: 1100px;
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont,
+               'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Top nav ---------- */
+
+.topnav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 3rem;
+  font-size: 0.95rem;
+}
+
+.topnav .name {
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.topnav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.topnav .nav-links a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.15s;
+}
+
+.topnav .nav-links a:hover { color: var(--text); }
+.topnav .nav-links a.active { color: var(--text); font-weight: 500; }
+
+.topnav .search {
+  color: var(--muted);
+  cursor: pointer;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 4rem 3rem 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 400;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.hero h2,
+.hero .subtitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 400;
+  color: var(--primary);
+  margin-bottom: 0;
+}
+
+/* ---------- Main content area ---------- */
+
+main {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 1rem 3rem 5rem;
+}
+
+main p { margin-bottom: 1rem; }
+main a { color: var(--primary); text-decoration: none; }
+main a:hover { text-decoration: underline; }
+
+h3.section-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--primary);
+  margin: 2.5rem 0 1rem;
+}
+
+/* ---------- Course / publication cards ---------- */
+
+.course, .pub {
+  border-bottom: 1px solid var(--hairline);
+  padding: 1.4rem 0;
+}
+
+.course:last-child, .pub:last-child { border-bottom: none; }
+
+.course h4, .pub h4 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.course-meta, .pub-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+
+.course-links a, .pub-links a {
+  font-size: 0.9rem;
+  color: var(--primary);
+  text-decoration: none;
+  margin-right: 1rem;
+  display: inline-block;
+  padding: 0.2rem 0;
+}
+
+.course-links a:hover, .pub-links a:hover { text-decoration: underline; }
+
+/* ---------- CTA button (e.g. "Download CV") ---------- */
+
+.cta {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 0.55rem 1.3rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  margin: 0.3rem 0 0.8rem;
+  transition: background 0.15s;
+}
+.cta:hover { background: var(--primary-hover); text-decoration: none; }
+.cta .meta { opacity: 0.85; font-size: 0.85rem; margin-left: 0.4rem; }
+
+.social-row a {
+  font-size: 0.92rem;
+  color: var(--muted);
+  text-decoration: none;
+  margin-right: 1rem;
+}
+.social-row a:hover { color: var(--primary); }
+
+/* ---------- Paper list (Research page, bullet-style) ---------- */
+
+.paper-list {
+  list-style: square;
+  padding-left: 1.5rem;
+  margin: 0.5rem 0 2.5rem;
+}
+
+.paper-list li {
+  padding: 0.45rem 0;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.paper-list li::marker {
+  color: var(--text);
+  font-size: 0.75em;
+}
+
+.paper-list li strong { font-weight: 600; }
+.paper-list li em { font-style: italic; }
+.paper-list li a { color: var(--primary); text-decoration: underline; }
+.paper-list li a:hover { color: var(--primary-hover); }
+
+.paper-list li ul.data-details {
+  list-style: circle;
+  padding-left: 1.4rem;
+  margin: 0.4rem 0 0.3rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.paper-list li ul.data-details li {
+  padding: 0.15rem 0;
+}
+
+.paper-list li ul.data-details li::marker {
+  color: var(--muted);
+  font-size: 0.7em;
+}
+
+.placeholder-note {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ---------- Bio block (home page) ---------- */
+
+.bio {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+  margin: 4rem 0 2rem;
+  align-items: start;
+}
+
+.bio img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.bio h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+
+.bio p {
+  margin-bottom: 0.9rem;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.bio a {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  border-top: 1px solid var(--hairline);
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 768px) {
+  .topnav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 0.5rem; }
+  .topnav .nav-links { gap: 1.2rem; font-size: 0.9rem; }
+  .hero { padding: 2rem 1.5rem; }
+  main { padding: 1rem 1.5rem 3rem; }
+  .bio { grid-template-columns: 1fr; gap: 1.5rem; margin: 2rem 0; }
+  .bio img { max-width: 220px; margin: 0 auto; }
+}
